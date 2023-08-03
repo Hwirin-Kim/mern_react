@@ -1,11 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import Input from "../../shared/components/FormElements/Input";
+import { VALIDATOR_REQUIRE } from "../../shared/util/validator";
 
 export default function NewPlace() {
   return (
     <StForm>
-      <Input element="input" type="text" label="Title" />
+      <Input
+        element="input"
+        type="text"
+        label="Title"
+        errorText="Please enter a valid title."
+        validators={[VALIDATOR_REQUIRE()]}
+      />
     </StForm>
   );
 }
