@@ -17,7 +17,7 @@ export default function NavLinks() {
       <Stli>
         <StNavLink
           className={({ isActive }) => (isActive ? "active" : "")}
-          to="/ul/places"
+          to="/:userId/places"
         >
           MY PLACES
         </StNavLink>

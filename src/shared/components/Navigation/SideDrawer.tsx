@@ -13,7 +13,11 @@ export default function SideDrawer({
   onClose,
   drawerIsOpen,
 }: SideDrawerProps) {
-  const content = <StAside drawerIsOpen={drawerIsOpen}>{children}</StAside>;
+  const content = (
+    <StAside onClick={onClose} drawerIsOpen={drawerIsOpen}>
+      {children}
+    </StAside>
+  );
   const root = document.getElementById("drawer-hook")!;
   return ReactDOM.createPortal(content, root);
 }
