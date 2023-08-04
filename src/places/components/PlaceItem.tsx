@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../../shared/components/FormElements/Button";
 import Map from "../../shared/components/Map/Map";
@@ -25,6 +26,13 @@ export default function PlaceItem({
   coordinates,
 }: PlaceItemProps) {
   const [showMap, setShowMap] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const navigator = useNavigate();
+  const confirmDeleteHandler = () => {
+    alert("Delete success");
+    setShowConfirmModal(false);
+  };
+
   return (
     <StLi>
       <StImage src={image} alt={title} />
@@ -35,12 +43,21 @@ export default function PlaceItem({
       </StInfoWrapper>
       <StBtnWrapper>
         <Button onClick={() => setShowMap(true)}>VIEW ON MAP</Button>
-        <Button>EDIT</Button>
-        <Button>DELETE</Button>
+        <Button onClick={() => navigator(`/places/${id}`)}>EDIT</Button>
+        <Button onClick={() => setShowConfirmModal(true)}>DELETE</Button>
       </StBtnWrapper>
       {showMap && (
         <Modal closeModal={() => setShowMap(false)}>
           <Map />
+        </Modal>
+      )}
+      {showConfirmModal && (
+        <Modal closeModal={() => setShowConfirmModal(false)}>
+          <StConfirmDelete>
+            <p>Are you sure?</p>
+            <Button onClick={() => confirmDeleteHandler()}>DELETE</Button>
+            <Button onClick={() => setShowConfirmModal(false)}>CANCEL</Button>
+          </StConfirmDelete>
         </Modal>
       )}
     </StLi>
@@ -88,4 +105,8 @@ const StBtnWrapper = styled.div`
   justify-content: center;
   align-items: center;
   border-top: 1px solid grey;
+`;
+
+const StConfirmDelete = styled.div`
+  background-color: white;
 `;

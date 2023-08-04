@@ -6,23 +6,21 @@ export default function Users() {
   const USERS: UsersType[] | [] = [
     {
       id: "u1",
-      name: "Jihyo",
-      image:
-        "https://cdn.hankooki.com/news/photo/202207/9937_13229_1657121047.jpg",
+      name: "도라에몽",
+      image: "https://t1.daumcdn.net/cfile/blog/232AF03F5375CD2E21",
       placeCount: 3,
     },
     {
       id: "u2",
-      name: "지효",
+      name: "호빵맨",
       image:
-        "https://images.chosun.com/resizer/y7hOZuA2GmrD12gJXHs-jYHanrE=/520x520/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/Y7K4F632E6AKWF4FP5HONHSH6E.jpg",
+        "https://w7.pngwing.com/pngs/944/50/png-transparent-cartoon-character-baikinman-anpanman-hello-kitty-animated-cartoon-anime-cartoon-bread-superman-cartoon-character-television-child.png",
       placeCount: 2,
     },
     {
       id: "u3",
-      name: "죠",
-      image:
-        "https://cphoto.asiae.co.kr/listimglink/1/2021060412105265495_1622776252.jpg",
+      name: "뽀로로",
+      image: "https://t1.daumcdn.net/cfile/tistory/267E7B4B55E7E6CE1F",
       placeCount: 5,
     },
   ];

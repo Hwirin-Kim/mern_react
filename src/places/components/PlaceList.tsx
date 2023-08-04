@@ -1,14 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
+import Button from "../../shared/components/FormElements/Button";
 import { PlaceListType } from "../../types";
 import PlaceItem from "./PlaceItem";
 
 export default function PlaceList({ items }: PlaceListType) {
+  const navigator = useNavigate();
   if (items.length === 0) {
     return (
       <>
         <StNoPlaceText>No place found. Maybe create one?</StNoPlaceText>
-        <StShareBtn>Share Place</StShareBtn>
+        <Button onClick={() => navigator("/places/new")}>Share Place</Button>
       </>
     );
   }
