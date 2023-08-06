@@ -6,6 +6,7 @@ import UpdatePlace from "./places/pages/UpdatePlace";
 import UserPlaces from "./places/pages/UserPlaces";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import GlobalStyles from "./styles/GlobalStyles";
+import Authenticate from "./user/pages/Authenticate";
 import Users from "./user/pages/Users";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/places/new" element={<NewPlace />} />
           <Route path="/:userId/places" element={<UserPlaces />} />
           <Route path="/places/:placeId" element={<UpdatePlace />} />
+          <Route path="/auth" element={<Authenticate />} />
         </Routes>
       </StMain>
     </BrowserRouter>
